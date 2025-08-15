@@ -12,3 +12,6 @@ seed:
 
 reseed:
 	make db seed
+
+format:
+	uv run ruff format
