@@ -23,17 +23,6 @@ SessionMakerSync: _sa_orm.Session = _sa_orm.sessionmaker(
 )
 
 
-async def get_session() -> AsyncGenerator[_sa_ext.AsyncSession, None]:
-    async with SessionMaker() as session:
-        try:
-            yield session
-            session.commit()
-
-        except Exception:
-            _logger.exception("Pain detected; transaction rolled back.")
-            raise
-
-
 async def get_repo() -> AsyncGenerator[_root.RootRepository, None]:
     async with SessionMaker() as session:
         try:
