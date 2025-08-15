@@ -28,9 +28,9 @@ class User(_model.BaseModel):
         return _domain.User(
             id=self.id,
             email=self.email,
-            f_name=self.first_name,
-            m_name=self.middle_name,
-            l_name=self.last_name,
+            first_name=self.first_name,
+            middle_name=self.middle_name,
+            last_name=self.last_name,
             is_active=self.is_active,
             created_at=self.created_at,
             updated_at=self.updated_at,

@@ -6,8 +6,8 @@ from modules.shared.repository import base as _base_repo
 
 class UsersRepository(_base_repo.BaseRepository):
     async def get_users(self) -> list[_domain.User]:
-        result = await self._session.execute(
+        query = await self._session.execute(
             _sa.select(_models.User).where(_models.User.is_active.is_(True))
         )
 
-        return [user.to_domain() for user in result.all()]
+        return [user.to_domain() for user in query.scalars()]

@@ -1,6 +1,7 @@
 import contextlib as _clib
 
 import fastapi as _fastapi
+from fastapi.middleware import gzip as _gzip
 
 from modules import settings as _settings
 from modules import health as _health
@@ -22,6 +23,9 @@ app = _fastapi.FastAPI(
     version=settings.app_version,
     default_response_class=_fastapi.responses.JSONResponse,
 )
+
+# ── Middlewares ────────────────────────────────────────────────────
+app.add_middleware(_gzip.GZipMiddleware)
 
 # ── Routers ────────────────────────────────────────────────────────
 app.include_router(_health.router, prefix="/health")

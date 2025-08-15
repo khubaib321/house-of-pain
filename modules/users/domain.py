@@ -5,9 +5,10 @@ from modules.shared import domain as _domain
 class BaseUser(_pydantic.BaseModel):
     email: str
     last_name: str
-    first_name: str | None = None
-    middle_name: str | None = None
     is_active: bool
+
+    first_name: str | None
+    middle_name: str | None
 
     @property
     def full_name(self) -> str:
