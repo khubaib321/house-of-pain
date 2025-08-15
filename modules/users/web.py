@@ -17,7 +17,7 @@ async def get_users(
 
 
 @router.get("/search/")
-async def get_user_by_email(
+async def search_user_by_name(
     name: str = _fastapi.Query(default=None),
     repo: _root.RootRepository = _fastapi.Depends(_db.get_repo),
 ) -> list[_services.UserRead]:
@@ -33,7 +33,7 @@ async def email_available(
 
 
 @router.get("/{user_id}/")
-async def get_user_by_email(
+async def get_user_by_id(
     user_id: int = _fastapi.Path(),
     repo: _root.RootRepository = _fastapi.Depends(_db.get_repo),
 ) -> _services.UserRead:
