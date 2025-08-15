@@ -25,3 +25,19 @@ class UserRead(_pydantic.BaseModel):
 
 async def get_users(repo: _repo.RootRepository) -> list[UserRead]:
     return [UserRead.from_domain(user) for user in await repo.users.get_users()]
+
+
+async def get_user_by_id(repo: _repo.RootRepository, user_id: int) -> UserRead:
+    return await repo.users.get_user_by_id(user_id=user_id)
+
+
+async def get_user_by_email(repo: _repo.RootRepository, email: str) -> UserRead:
+    return await repo.users.get_user_by_email(email=email)
+
+
+async def email_exists(repo: _repo.RootRepository, email: str) -> bool:
+    return await repo.users.email_exists(email=email)
+
+
+async def search_user_by_name(repo: _repo.RootRepository, name: str) -> list[UserRead]:
+    return await repo.users.search_by_name(name=name)
