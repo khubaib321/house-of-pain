@@ -15,6 +15,7 @@ class Settings(_ps.BaseSettings):
     app_name: str = "hop"
     app_version: str = "0.0.1"
     database_url: str = "localhost"
+    database_url_sync: str = "localhost"
 
 
 @_ft.lru_cache
