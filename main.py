@@ -3,9 +3,11 @@ import contextlib as _clib
 import fastapi as _fastapi
 from fastapi.middleware import gzip as _gzip
 
+from modules.shared import errors as _errors
 from modules import settings as _settings
 from modules import health as _health
 from modules.users import web as _users_web
+from modules import exc as _exc_handlers
 
 
 settings = _settings.get_settings()
@@ -26,6 +28,9 @@ app = _fastapi.FastAPI(
 
 # ── Middlewares ────────────────────────────────────────────────────
 app.add_middleware(_gzip.GZipMiddleware)
+
+# ── Exception handlers ─────────────────────────────────────────────
+app.add_exception_handler(_errors.NotFoundError, _exc_handlers.not_found)
 
 # ── Routers ────────────────────────────────────────────────────────
 app.include_router(_health.router, prefix="/health")

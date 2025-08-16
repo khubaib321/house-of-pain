@@ -2,5 +2,9 @@ class ThePain(Exception):
     pass
 
 
-class UserNotFoundError(ThePain):
+class NotFoundError(ThePain):
+    pass
+
+
+class UserNotFoundError(NotFoundError):
     pass
