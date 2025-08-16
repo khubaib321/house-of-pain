@@ -1,0 +1,9 @@
+from modules.shared import enums as _enums
+
+
+class UserStatus(_enums.BaseEnum):
+    ACTIVE = "ACTIVE"
+    INACTIVE_STALE = "INACTIVE_STALE"
+    INACTIVE_BANNED = "INACTIVE_BANNED"
+    INACTIVE_UNVERIFIED = "INACTIVE_UNVERIFIED"
+    INACTIVE_DEACTIVATED = "INACTIVE_DEACTIVATED"

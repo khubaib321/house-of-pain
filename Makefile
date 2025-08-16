@@ -1,3 +1,7 @@
+migrations:
+	uv sync --active
+	uv run alembic revision --autogenerate
+
 upgrade:
 	uv run alembic upgrade head
 
