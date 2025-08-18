@@ -1,7 +1,7 @@
 import fastapi as _fastapi
 from modules import db as _db
 from modules.users import services as _services
-from modules.shared.repository import root as _root
+from modules.base.repository import root as _root
 
 
 router = _fastapi.APIRouter(

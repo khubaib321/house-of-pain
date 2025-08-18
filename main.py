@@ -4,7 +4,7 @@ import fastapi as _fastapi
 from fastapi import responses as _responses
 from fastapi.middleware import gzip as _gzip
 
-from modules.shared import errors as _errors
+from modules.base import errors as _errors
 from modules import settings as _settings
 from modules import health as _health
 from modules.users import web as _users_web

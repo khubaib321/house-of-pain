@@ -1,8 +1,7 @@
 from typing import Self
 import sqlalchemy as _sa
 import sqlalchemy.orm as _sa_orm
-from modules.users import enums as _enums
-from modules.shared import model as _model
+from modules.base import model as _model
 from modules.users import domain as _domain
 
 

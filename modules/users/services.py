@@ -2,7 +2,7 @@ from typing import Self
 import datetime as _dt
 import pydantic as _pydantic
 from modules.users import domain as _domain
-from modules.shared.repository import root as _repo
+from modules.base.repository import root as _repo
 
 
 class UserRead(_pydantic.BaseModel):

@@ -21,8 +21,8 @@ format:
 	uv run ruff format
 
 run:
-	uvicorn main:app --loop uvloop --host 0.0.0.0 --port 8192
+	uvicorn main:app --loop uvloop --host 0.0.0.0 --port 8000
 
 dev:
 	uv sync --active
-	uvicorn main:app --loop uvloop --host 0.0.0.0 --port 8192 --reload
+	uvicorn main:app --loop uvloop --host 127.0.0.1 --port 8192 --reload

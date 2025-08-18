@@ -2,7 +2,7 @@ import sqlalchemy as _sa
 import pydantic as _pydantic
 
 from modules import db as _db
-from modules.shared import model as _model
+from modules.base import model as _model
 
 
 def insert_batch(

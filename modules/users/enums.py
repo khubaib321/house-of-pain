@@ -1,4 +1,4 @@
-from modules.shared import enums as _enums
+from modules.base import enums as _enums
 
 
 class UserStatus(_enums.BaseEnum):

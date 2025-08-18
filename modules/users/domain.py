@@ -1,6 +1,6 @@
 import pydantic as _pydantic
 from modules.users import enums as _enums
-from modules.shared import domain as _domain
+from modules.base import domain as _domain
 
 
 class BaseUser(_pydantic.BaseModel):

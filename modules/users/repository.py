@@ -2,8 +2,8 @@ import sqlalchemy as _sa
 from modules.users import enums as _enums
 from modules.users import models as _models
 from modules.users import domain as _domain
-from modules.shared import errors as _errors
-from modules.shared.repository import base as _base_repo
+from modules.base import errors as _errors
+from modules.base.repository import base as _base_repo
 
 
 class UsersRepository(_base_repo.BaseRepository):

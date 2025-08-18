@@ -4,7 +4,7 @@ import sqlalchemy as _sa
 import sqlalchemy.orm as _sa_orm
 import sqlalchemy.ext.asyncio as _sa_ext
 from modules import settings as _settings
-from modules.shared.repository import root as _root
+from modules.base.repository import root as _root
 
 _logger = _logging.getLogger(__name__)
 
