@@ -42,6 +42,7 @@ prepend_sys_path = [
 dev = [
     "mypy>=1.17.1",
     "ruff>=0.12.9",
+    "ty>=0.0.1a18",
 ]
 
 # timezone to use when rendering the date within the migration file

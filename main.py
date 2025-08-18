@@ -1,6 +1,7 @@
 import contextlib as _clib
 
 import fastapi as _fastapi
+from fastapi import responses as _responses
 from fastapi.middleware import gzip as _gzip
 
 from modules.shared import errors as _errors
@@ -23,7 +24,7 @@ app = _fastapi.FastAPI(
     lifespan=lifespan,
     title=settings.app_name,
     version=settings.app_version,
-    default_response_class=_fastapi.responses.JSONResponse,
+    default_response_class=_responses.JSONResponse,
 )
 
 # ── Middlewares ────────────────────────────────────────────────────

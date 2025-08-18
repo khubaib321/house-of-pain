@@ -1,4 +1,4 @@
-from typing import AsyncGenerator
+from typing import AsyncGenerator, Callable
 import logging as _logging
 import sqlalchemy as _sa
 import sqlalchemy.orm as _sa_orm
@@ -18,7 +18,7 @@ _engine_sync = _sa.create_engine(
 SessionMaker: _sa_ext.async_sessionmaker[_sa_ext.AsyncSession] = (
     _sa_ext.async_sessionmaker(_engine, expire_on_commit=False)
 )
-SessionMakerSync: _sa_orm.Session = _sa_orm.sessionmaker(
+SessionMakerSync: Callable[[], _sa_orm.Session] = _sa_orm.sessionmaker(
     bind=_engine_sync, expire_on_commit=False
 )
 

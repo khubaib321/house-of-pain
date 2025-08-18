@@ -8,3 +8,11 @@ repos:
       args: [ --fix ]
     # Run the formatter.
     - id: ruff-format
+- repo: local
+  hooks:
+    - id: ty-check
+      name: type check
+      language: system
+      always_run: true
+      entry: ty check
+      pass_filenames: false
